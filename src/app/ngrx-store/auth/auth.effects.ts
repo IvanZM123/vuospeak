@@ -82,7 +82,7 @@ export class AuthEffects {
          ofType(authActions.startLogout),
          mergeMap(() => this.authService.logout().pipe(
               map(() => {
-                   document.location.href = "/auth/login";
+                   document.location.href = "/login";
                    return authActions.successLogout();
                }),
               catchError(error => of(authActions.failureLogout({ error })))

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
+
+// Imports routing
+import { ProfileLayoutRoutingModule } from "./profile-layout-routing.module";
 
 // Import layout
 import { ProfileLayoutComponent } from "./profile-layout.component";
@@ -23,7 +25,7 @@ import { ProfileSharedModule } from "../../shared/profile-shared.module";
 
   imports: [
     CommonModule,
-    RouterModule,
+    ProfileLayoutRoutingModule,
     ProfileSharedModule
   ]
 })

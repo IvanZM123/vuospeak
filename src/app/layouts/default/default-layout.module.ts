@@ -1,10 +1,12 @@
 // Imports modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
 
 // Import layout
 import { DefaultLayoutComponent } from "./default-layout.component";
+
+// Import routing
+import { DefaultLayoutRoutingModule } from "./default-layout-routing.module";
 
 // Imports pages
 import { HomePageComponent } from "../../pages/home-page/home-page.component";
@@ -24,7 +26,7 @@ import { DefaultSharedModule } from "../../shared/default-shared.module";
   
   imports: [
     CommonModule,
-    RouterModule,
+    DefaultLayoutRoutingModule,
     DefaultSharedModule
   ]
 })

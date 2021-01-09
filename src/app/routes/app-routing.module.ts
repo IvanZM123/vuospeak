@@ -2,13 +2,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// Import routes
-import { HomeRoutes } from "./home/home.routes";
-import { ProfileRoutes } from "./profile/profile.routes";
-
 const routes: Routes = [
-  HomeRoutes,
-  ProfileRoutes
+  {
+    path: "",
+    loadChildren: () => import("src/app/layouts/default/default-layout.module").then(module => module.DefaultLayoutModule)
+  },
+  {
+    path: "profile",
+    loadChildren: () => import("src/app/layouts/profile-layout/profile-layout.module").then(module => module.ProfileLayoutModule)
+  }
 ];
 
 @NgModule({

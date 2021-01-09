@@ -1,0 +1,17 @@
+<div class="row justify-content-center mt-3">
+     <!-- Welcome -->
+     <div class="col-11 col-sm-8 col-md-6 col-lg-5 p-2">
+          <app-welcome-card [user]="user"></app-welcome-card>
+     </div>
+     <!-- #End welcome -->
+     
+     <!-- Time -->
+     <div class="col-11 col-sm-8 col-md-6 col-lg-3 p-2">
+          <app-card-time></app-card-time>
+     </div>
+     <!-- #End time -->
+
+     <div class="col-12 col-sm-8 col-lg-4 p-2">
+          <app-section-recents [tasks]="tasks"></app-section-recents>
+     </div>
+</div>

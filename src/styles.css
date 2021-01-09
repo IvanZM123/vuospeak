@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+p, span, label, input, textarea {
+     font-size: 18px;
+}
+
+html, body {
+     height: 100%;
+}
+
+body {
+     margin: 0;
+     font-family: Roboto, Georgia, 'Times New Roman', Times, serif;
+}
+.spacer {
+     flex: 1 1 auto;
+}
+
+.mat-raised-button, .mat-button, .mat-fab, .mat-mini-fab {
+     outline: none !important;
+}

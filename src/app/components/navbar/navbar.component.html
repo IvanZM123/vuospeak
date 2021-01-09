@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
+  <div class="container-fluid px-lg-5">
+    <a
+      class="navbar-brand"
+      routerLink="/"
+    >
+      <img
+        src="/assets/icons/logo.png"
+        alt="Vuospeak logo"
+        height="60px"
+        width="60px"
+      >
+      <span class="mx-2 text-primary" style="font-size: 22px;">
+        <strong>Vuospeak</strong>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      </ul>
+
+      <span class="spacer"></span>
+
+      <button
+        mat-button
+        routerLink="/auth/login"
+        class="py-1 px-4 mx-2 rounded-pill text-primary d-block"
+      >Iniciar sesion</button>
+
+      <button
+        mat-raised-button
+        routerLink="/auth/register"
+        class="bg-primary text-white py-1 px-4 rounded-pill d-block"
+      >Crear una cuenta</button>
+    </div>
+  </div>
+</nav>

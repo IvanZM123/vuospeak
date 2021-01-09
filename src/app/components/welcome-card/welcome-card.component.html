@@ -1,0 +1,22 @@
+<mat-card class="welcome border-0 shadow text-white p-4" style="border-radius: 20px;">
+     <div class="row align-items-center">
+          <div class="col-12 col-lg-7">
+               <h1>
+                    <strong>Bienvenido {{ user.name }}</strong>
+               </h1>
+               <p>Vuospeak te permite agregar tus notas, con solo utilizar tu voz.</p>
+               <button
+                    mat-raised-button
+                    routerLink="/profile/settings"
+                    class="py-1 px-4 rounded-pill text-primary"
+               >Mi perfil</button>
+          </div>
+          <div class="col-12 col-lg-5 d-none d-lg-block">
+               <img
+                    src="/assets/images/banner-welcome.svg"
+                    alt="Banner welcome vuospeak"
+                    width="100%"
+               >
+          </div>
+     </div>
+</mat-card>

@@ -1,0 +1,23 @@
+<div class="container py-3">
+     <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-12 p-3">
+               <mat-card class="border-0 shadow">
+                    <div class="row align-items-center">
+                         <div class="col-12 col-lg-6 d-none d-lg-block">
+                              <img
+                                   src="/assets/images/banner-register.svg"
+                                   alt="Vuochat banner register"
+                                   width="100%"
+                              >
+                         </div>
+                         <div class="col-12 col-lg-6">
+                              <app-auth-form
+                                   [isRegister]="true"
+                                   [header]="header"
+                              ></app-auth-form>
+                         </div>
+                    </div>
+               </mat-card>
+          </div>
+     </div>
+</div>

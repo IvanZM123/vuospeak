@@ -1,0 +1,17 @@
+<mat-card class="border-0 text-primary shadow p-0 py-3 rounded-3">
+     <mat-list class="pt-0">
+          <mat-list-item class="text-muted" style="height: auto;">
+               <button mat-fab color="light" class="d-none d-sm-block">
+                    <mat-icon class="text-primary">note</mat-icon>
+               </button>
+               <span style="font-size: 16px;" class="pl-3 text-justify">{{ sticker.message }}</span>
+          </mat-list-item>
+     </mat-list>
+     <mat-card-actions class="d-flex">
+          <span class="spacer"></span>
+
+          <button (click)="speak(sticker.message)" mat-button>
+               <mat-icon>volume_up</mat-icon>
+          </button>
+     </mat-card-actions>
+</mat-card>

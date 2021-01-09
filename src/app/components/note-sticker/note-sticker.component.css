@@ -1,0 +1,101 @@
+.background0 {
+     background-color: #4158D0;
+     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.color0 {
+     color: #4158D0;
+}
+
+.background1 {
+     background-color: #0093E9;
+     background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.color1 {
+     color: #0093E9;;
+}
+
+.background2 {
+     background-color: #8EC5FC;
+     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+}
+
+.color2 {
+     color: #8EC5FC;
+}
+
+.background3 {
+     background-color: #FBAB7E;
+     background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);     
+}
+
+.color3 {
+     color: #FBAB7E;
+}
+
+.background4 {
+     background-color: #85FFBD;
+     background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+
+.color4 {
+     color: #FBAB7E;
+}
+
+.background5 {
+     background-color: #FF9A8B;
+     background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+}
+
+.color5 {
+     color: #FF9A8B;
+}
+
+.background6 {
+     background-color: #08AEEA;
+     background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.color6 {
+     color: #08AEEA;
+}
+
+.background7 {
+     background-color: #FF3CAC;
+     background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);     
+}
+
+.color7 {
+     color: #FF3CAC;
+}
+
+.background8 {
+     background: #FF416C;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.color8 {
+     color: #FF416C;
+}
+
+.background9 {
+     background: #cc2b5e;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #753a88, #cc2b5e);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #753a88, #cc2b5e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.color9 {
+     color: #cc2b5e;
+}
+
+.background10 {
+     background: #232526;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.color10 {
+     color: #232526
+}

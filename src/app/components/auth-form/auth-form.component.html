@@ -1,0 +1,87 @@
+<div class="card border-0 w-100">
+     <div class="card-header text-center bg-white border-0">
+          <h1 class="card-title text-primary my-2">
+               <strong>{{ header.title }}</strong>
+          </h1>
+          <p class="card-subtitle text-muted m-0">{{ header.subtitle }}</p>
+          <hr>
+          <div class="text-center">
+               <button
+                    (click)="loginWithGoogle()"
+                    color="light"
+                    class="m-2"
+                    mat-fab
+               >
+                    <img
+                         src="/assets/icons/google.svg"
+                         height="30px"
+                         width="30px"
+                         class="pb-1"
+                    >
+               </button>
+               <button
+                    (click)="loginWithTwitter()"
+                    color="light"
+                    class="m-2"
+                    mat-fab
+               >
+                    <img
+                         src="/assets/icons/twitter.svg"
+                         height="30px"
+                         width="30px"
+                         class="pb-1"
+                    >
+               </button>
+               <button
+                    (click)="loginWithFacebook()"
+                    color="light"
+                    class="m-2"
+                    mat-fab
+               >
+                    <img
+                         src="/assets/icons/facebook.svg"
+                         height="30px"
+                         width="30px"
+                         class="pb-1"
+                    >
+               </button>
+          </div>
+     </div>
+     <div class="card-body">
+          <form
+               [formGroup]="credentials"
+               (submit)="auth()"
+               novalidate
+          >
+               <div class="form-group">
+                    <label>Correo electronico</label>
+                    <input
+                         class="form-control my-2 py-4"
+                         formControlName="email"
+                         autocomplete="off"
+                         id="input-email"
+                         name="email"
+                         autofocus
+                         required
+                    >
+                    <small id="small-email" class="form-text text-muted">Escriba su correo electronico</small>
+               </div>
+               <div class="form-group">
+                    <label>Contraseña</label>
+                    <input
+                         formControlName="password"
+                         class="form-control my-2 py-4"
+                         type="password"
+                         name="password"
+                         required
+                    >
+                    <small class="form-text text-muted">Escriba su contraseña</small>
+               </div>
+               <button
+                    [disabled]="credentials.invalid"
+                    type="submit"
+                    [ngClass]="['btn', setColor(), 'w-100']"
+               >{{ setText() }}</button>
+          </form>
+     </div>
+</div>

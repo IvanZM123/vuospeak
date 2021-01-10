@@ -1,6 +1,6 @@
 <div mat-dialog-content>
      <div *ngIf="supported" class="py-3">
-          <span (click)="enableListening()" class="text-danger">
+          <span (click)="enableListening()" class="{{ speechService.stopped ? 'text-success' : 'text-danger' }}">
                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
                     <path fill-rule="evenodd" d="M10 8V3a2 2 0 1 0-4 0v5a2 2 0 1 0 4 0zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
@@ -9,29 +9,29 @@
           <hr>
      </div>
      
-     <app-alert
-          [alert]="message"
-     ></app-alert>
-     
      <form id="note-form" (submit)="saveNote()">
           <div class="form-group">
-               <label>Descripcion</label>
                <textarea
+                    [(ngModel)]="speechService.content"
                     placeholder="Escriba su tarea"
                     class="form-control"
                     name="text"
                     id="text"
                     rows="5"
-                    [(ngModel)]="speechService.content"
                     autofocus
                     required
                ></textarea>
           </div>
           <div class="text-right">
-               <button (click)="close()" type="button" class="btn mx-2">Cancelar</button>
+               <button
+                    mat-button
+                    type="button"
+                    (click)="close()"
+               >Cancelar</button>
                <button
                     type="submit"
-                    class="btn btn-dark mx-2"
+                    mat-raised-button
+                    class="bg-primary text-white"
                >Guardar</button>
           </div>
      </form>

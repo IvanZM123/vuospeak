@@ -9,9 +9,8 @@ declare var window: IWindow;
 })
 export class SpeechRecognitionService {
   private speech!: SpeechRecognition;
-  private stopped: boolean = false;
-  private bufferContent: string[] = [];
-  private tempContent = "";
+  public stopped: boolean = false;
+  public bufferContent: string[] = [];
   public content: string = "";
 
   /**
@@ -66,7 +65,7 @@ export class SpeechRecognitionService {
       this.content = this.bufferContent.join(" ") + content;
 
       if (result.isFinal) {
-        this.bufferContent.push(content);
+        this.setBufferContent(content);
 
         this.content = this.bufferContent.join(" ");
       }
@@ -84,5 +83,9 @@ export class SpeechRecognitionService {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  setBufferContent(message: string): void {
+    this.bufferContent.push(message);
   }
 }

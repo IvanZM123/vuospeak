@@ -13,9 +13,6 @@ import { SpeechRecognitionService } from "src/app/services/speech-recognition/sp
 // Import >> Note Actions <<
 import { startAddTask, startUpdateTask } from "src/app/ngrx-store/tasks/task.actions";
 
-// Import >> interfaces <<
-import { IAlertComponent } from '../alert/models/alert.model';
-
 // Import models
 import { Task } from "src/app/models/Note.models";
 import { User } from 'src/app/models/User';
@@ -30,8 +27,7 @@ import { SnackbarComponent } from "src/app/components/snackbar/snackbar.componen
 })
 export class NoteFormComponent implements OnInit {
   private user!: User | null;
-  message!: IAlertComponent;
-  supported: boolean;
+  supported!: boolean;
 
   constructor(
     private dialogRef: MatDialogRef<NoteFormComponent>,
@@ -42,26 +38,43 @@ export class NoteFormComponent implements OnInit {
     }>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.supported = this.speechService.isSupported();
+    this.setSupported();
+    this.setUser();
+  }
 
+  ngOnInit(): void {
+    this.speechService.setBufferContent(this.data?.message || "");
+
+    if (this.data) this.speechService.content = this.data.message
+  }
+
+  /**
+   * We assign the data to the user.
+   */
+  private setUser(): void {
     this.store.select("authStore").subscribe(res => {
       this.user = res.user;
     });
   }
 
-  ngOnInit(): void {
-    this.verifySupport();
-
-    if (this.data) {
-      this.speechService.content = this.data.message;
-    }
+  /**
+   * Check if the browser supports voice recognition.
+   */
+  private setSupported(): void {
+    this.supported = this.speechService.isSupported();
   }
 
+  /**
+   * Save the note
+   */
   public saveNote(): boolean {
     !this.data ? this.createTask() : this.updateTask();
     return false;
   }
 
+  /**
+   * Add a new note to the collection.
+   */
   private createTask(): void {
     if (this.user && this.speechService.content) {
       // Create task
@@ -80,6 +93,9 @@ export class NoteFormComponent implements OnInit {
     }
   }
 
+  /**
+   * Update a collection note.
+   */
   private updateTask(): void {
     const { content } = this.speechService;
     
@@ -100,37 +116,33 @@ export class NoteFormComponent implements OnInit {
     }
   }
 
+  /**
+   * We turn on the microphone
+   */
   enableListening(): void {
     this.speechService.start();
   }
 
+  /**
+   * Show a message after saving the note.
+   * @param message 
+   * @param icon 
+   * @param status 
+   */
   private showMessage(message: string, icon: string, status: string) {
-      // Open snackbar
       this.snackbar.openFromComponent(SnackbarComponent, {
         duration: 5000,
         panelClass: [status],
         data: { icon: icon, text: message }
       });
   }
-
-  private verifySupport(): void {
-    if (this.supported) {
-      this.message = {
-        title: "¡Reconocimiento de voz!",
-        subtitle: "Ahora puedes agregar tus notas utilizando tu voz. ¡Pruebla ahora!",
-        status: "info"
-      };
-    } else {
-      this.message = {
-        title: "No soportado, ",
-        subtitle: "actualmente su navegador no soporta el reconocimiento de voz, si desea probarla utilice Google Chrome o Microsoft Edge",
-        status: "warning"
-      };
-    }
-  }
   
+  /**
+   * Clean the form and properties.
+   */
   close(): void {
     this.dialogRef.close();
     this.speechService.content = "";
+    this.speechService.bufferContent = [];
   }
 }
